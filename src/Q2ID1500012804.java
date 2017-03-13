@@ -5,14 +5,13 @@ import java.util.Scanner;
 public class Q2ID1500012804 {
     static int[] v = {1, 2, 5};
     public static long solve(int amount){
-        int[] dp = new int[amount + 1];
-        for(int i = 1; i <= amount; i++)
-            dp[i] = 0;
-        dp[0] = 1;
-        for(int i = 0; i < 3; i++)
-            for(int j = v[i]; j <= amount; j++)
-                dp[j] += dp[j - v[i]];
-        return dp[amount];
+        long a = amount / 2 + 1;
+        long b = (amount - 5) / 2 + 1;
+        long c = (amount - 10) / 2 + 1;
+        long d = (amount - 15) / 2 + 1;
+        long e = amount / 10;
+        long f = c + d - a - b;
+        return (a + b) * e + e * (e - 1) * f / 2 + 1;
     }
     public static void main(String args[]) {
         int amount = 0;
