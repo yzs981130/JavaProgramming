@@ -45,6 +45,6 @@ public class Main{
         A a = new A();
         Test t = new Test();
         t.manager();
-        a.foo(3, 0);
+        a.foo(4, 0);
     }
 }
